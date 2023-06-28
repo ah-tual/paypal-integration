@@ -1,13 +1,39 @@
-export default {
-    paypalUri: "https://ipnpb.sandbox.paypal.com",
-    oauthClientId: "1030784155004-qdeq81nf7teauleh49b8r2gqmues5gpg.apps.googleusercontent.com",
-    port: 1337,
-    dbUri: "mongodb://localhost:27017/rest-api-tutorial",
-    saltWorkFactor: 10,
-    accessTokenTtl: "15m",
-    refreshTokenTtl: "1y",
-    accessTokenPrivateKey: ``,
-    accessTokenPublicKey: ``,
-    refreshTokenPrivateKey: ``,
-    refreshTokenPublicKey: ``,
+const env = 'dev';
+
+export const devConfig = {
+    app: {
+        id: '',
+        brand: 'perform-flow',
+        domain: 'http://127.0.0.1:5001',
+        returnUrl: '',
+        cancelUrl: '',
+    },
+    paypal: {
+        url: 'https://api-m.sandbox.paypal.com',
+        ipnUrl: 'https://ipnpb.sandbox.paypal.com',
+        basicAuth: 'Basic QVFlaWpMcXk4UWJVVjNBR2E1QlM4eHJIaXFXT3dYSW42VTdadUdEOUJDTURrdUlXNFhvMVZSTlpOa1BPMGY2NlZpR3FRYU90eENvR0VNQU46RUpIdWxFakxGWGdaQWlwc1B0RmpHN2ZFLUoydExLYzFaZ0Y5MnlsdjMzTTRCeTRTallBVTJLTHVqSFZtOTQzSHRReEd1WkJ1X3p4cnlUZ2Q='
+    },
+    google: {
+        clientId: '351360855136-c65vr13tal2in9b9m1hdmp5dgr4rie3l.apps.googleusercontent.com'
+    }
 };
+
+export const config = {
+    app: {
+        id: '',
+        brand: 'perform-flow',
+        domain: 'http://127.0.0.1:5001',
+        returnUrl: '',
+        cancelUrl: '',
+    },
+    paypal: {
+        url: 'https://api-m.sandbox.paypal.com',
+        ipnUrl: 'https://ipnpb.sandbox.paypal.com',
+        basicAuth: 'Basic QVFlaWpMcXk4UWJVVjNBR2E1QlM4eHJIaXFXT3dYSW42VTdadUdEOUJDTURrdUlXNFhvMVZSTlpOa1BPMGY2NlZpR3FRYU90eENvR0VNQU46RUpIdWxFakxGWGdaQWlwc1B0RmpHN2ZFLUoydExLYzFaZ0Y5MnlsdjMzTTRCeTRTallBVTJLTHVqSFZtOTQzSHRReEd1WkJ1X3p4cnlUZ2Q='
+    },
+    google: {
+        clientId: '351360855136-c65vr13tal2in9b9m1hdmp5dgr4rie3l.apps.googleusercontent.com'
+    }
+};
+
+export default env == 'dev' ? devConfig : config;
