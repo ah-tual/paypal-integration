@@ -6,6 +6,13 @@ import { getFirestore } from "firebase-admin/firestore";
 import config from '../../default';
 import { postForm } from '../../helpers/apiClient';
 
+export const handleCallback = async (req: express.Request, res: express.Response) => {
+  console.log("Callback Notification Event Received");
+  console.log(req.query);
+  console.log(req.params);
+  console.log(req.body);
+}
+
 export const handleIPN = async (req: express.Request, res: express.Response) => {
   console.log("IPN Notification Event Received");
 

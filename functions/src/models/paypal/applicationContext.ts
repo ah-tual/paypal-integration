@@ -1,4 +1,4 @@
-import config from '../default';
+import config from '../../default';
 
 export interface IApplicationContext {
     brandName: string,

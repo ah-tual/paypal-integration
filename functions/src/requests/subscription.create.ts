@@ -1,5 +1,5 @@
-import { ISubcriber, getDefault as getSubscriber } from '../models/subscriber';
-import { IApplicationContext, getDefault as getAppContext } from '../models/applicationContext';
+import { ISubcriber, getDefault as getSubscriber } from '../models/paypal/subscriber';
+import { IApplicationContext, getDefault as getAppContext } from '../models/paypal/applicationContext';
 
 export interface IRequest {
     planId: string,

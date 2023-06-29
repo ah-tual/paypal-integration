@@ -1,5 +1,5 @@
-import { ILink } from "../models/link";
-import { ISubcriber } from "../models/subscriber";
+import { ILink } from "../models/paypal/link";
+import { ISubcriber } from "../models/paypal/subscriber";
 
 
 export interface IResponse {

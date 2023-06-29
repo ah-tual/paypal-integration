@@ -5,7 +5,7 @@ import { getFirestore } from 'firebase-admin/firestore';
 import express, { Request, Response, RequestHandler } from 'express';
 import cors from 'cors';
 
-import * as middleware from './middlewares/index';
+//import * as middleware from './middlewares/index';
 import router from './router';
 
 initializeApp();
@@ -19,7 +19,6 @@ app.use(
   })
 );
 
-app.use(middleware.isAuthenticated);
 app.use(express.json() as RequestHandler);
 app.use(
   express.urlencoded({

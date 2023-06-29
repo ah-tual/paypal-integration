@@ -1,5 +1,6 @@
 import { IBillingCycle } from "./billingCycle";
 import { ILink } from "./link";
+import { ITaxes } from "./taxes";
 
 export interface IPlan {
     id: string,
@@ -8,5 +9,8 @@ export interface IPlan {
     description: string,
     status: string,
     billingCycles: IBillingCycle[]
+    taxes: ITaxes,
+    create_time: string,
+    update_time: string,
     links: ILink[]
 }
