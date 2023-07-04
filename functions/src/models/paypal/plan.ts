@@ -1,16 +1,16 @@
 import { IBillingCycle } from "./billingCycle";
-import { ILink } from "./link";
+import { IPaymentPreferences } from "./paymentPreferences";
 import { ITaxes } from "./taxes";
 
 export interface IPlan {
     id: string,
-    product_id: string,
+    productId: string,
     name: string,
     description: string,
     status: string,
-    billingCycles: IBillingCycle[]
-    taxes: ITaxes,
-    create_time: string,
-    update_time: string,
-    links: ILink[]
+    billingCycles: IBillingCycle[],
+    paymentPreferences?: IPaymentPreferences,
+    taxes?: ITaxes,
+    createTime: string,
+    updateTime?: string
 }

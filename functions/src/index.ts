@@ -7,6 +7,7 @@ import cors from 'cors';
 
 //import * as middleware from './middlewares/index';
 import router from './router';
+import { compensate01, compensate02 } from './usecases/paypal/subscription';
 
 initializeApp();
 
@@ -56,3 +57,16 @@ export const makeUppercase = firestore
 
     return snapshot.ref.set({ uppercase }, { merge: true });
   });
+
+
+exports.compensationTask = functions.pubsub
+.schedule('*/5 * * * *')
+.timeZone('UTC')
+.retryConfig({
+  retryCount: 5,
+})
+.onRun(async () => {
+  console.log('-------------compensationTask------------');
+  await compensate01();
+  await compensate02()
+})

@@ -6,6 +6,6 @@ export interface IBillingCycle {
     tenureType: string,
     sequence: number,
     totalCycles: number,
-    pricing_scheme: IPricingScheme
+    pricingScheme: IPricingScheme
 
 }
