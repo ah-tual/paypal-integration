@@ -14,42 +14,48 @@ function getLogSync () : LogSync {
     return logging.logSync(callingFunctionName);
 }
 
-export function info (message: string, labels: Record<string, string>) {
+export function info (message: string, labels?: Record<string, string>) {
+    console.log(message);
     const log = getLogSync();
     const meta :LogEntry = { labels: labels };
     const entry = log.entry(meta, message);
     log.info(entry);
 }
 
-export function debug (message: string, labels: Record<string, string>) {
+export function debug (message: string, labels?: Record<string, string>) {
+    console.log(message);
     const log = getLogSync();
     const meta :LogEntry = { labels: labels };
     const entry = log.entry(meta, message);
     log.debug(entry);
 }
 
-export function alert (message: string, labels: Record<string, string>) {
+export function alert (message: string, labels?: Record<string, string>) {
+    console.log(message);
     const log = getLogSync();
     const meta :LogEntry = { labels: labels };
     const entry = log.entry(meta, message);
     log.alert(entry);
 }
 
-export function warning (message: string, labels: Record<string, string>) {
+export function warning (message: string, labels?: Record<string, string>) {
+    console.log(message);
     const log = getLogSync();
     const meta :LogEntry = { labels: labels };
     const entry = log.entry(meta, message);
     log.warning(entry);
 }
 
-export function error (message: string, labels: Record<string, string>) {
+export function error (message: string, labels?: Record<string, string>) {
+    console.log(message);
     const log = getLogSync();
     const meta :LogEntry = { labels: labels };
     const entry = log.entry(meta, message);
     log.error(entry);
 }
 
-export function critical (message: string, labels: Record<string, string>) {
+export function critical (message: string, labels?: Record<string, string>) {
+    console.log(message);
     const log = getLogSync();
     const meta :LogEntry = { labels: labels };
     const entry = log.entry(meta, message);

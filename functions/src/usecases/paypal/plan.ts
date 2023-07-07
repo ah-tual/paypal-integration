@@ -1,5 +1,4 @@
 import { v4 as uuidv4 } from 'uuid';
-import { getFirestore } from "firebase-admin/firestore";
 import config from '../../default'
 import { get, postJson } from '../../helpers/apiClient';
 import { IPlan } from '../../models/paypal/plan';
@@ -7,9 +6,7 @@ import { getToken } from './authentication';
 import { IRequest, get as getCreatePlanRequest } from '../../requests/plan.create';
 import { Response as ICreatePlanResponse } from '../../responses/plan.create';
 import { Response as IGetPlanResponse } from '../../responses/plan.get';
-import { IBillingCycle } from '../../models/paypal/billingCycle';
-import { InvalidResourceError, ResourceNotFoundError } from '../../errors/resource';
-import { IUser } from '../../models/google/user';
+import { ResourceNotFoundError } from '../../errors/resource';
 
 export const getPlanById = async (planId: string, token?: string): Promise<IGetPlanResponse> => {
     if (!token) {

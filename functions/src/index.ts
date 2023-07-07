@@ -7,7 +7,7 @@ import cors from 'cors';
 
 //import * as middleware from './middlewares/index';
 import router from './router';
-import { compensate01, compensate02 } from './usecases/paypal/subscription';
+import { compensate01, compensate02, retrieveSubscriptions } from './usecases/paypal/subscription';
 
 initializeApp();
 
@@ -69,4 +69,15 @@ exports.compensationTask = functions.pubsub
   console.log('-------------compensationTask------------');
   await compensate01();
   await compensate02()
+})
+
+exports.retrievalTask = functions.pubsub
+.schedule('*/5 * * * *')
+.timeZone('UTC')
+.retryConfig({
+  retryCount: 5,
+})
+.onRun(async () => {
+  console.log('-------------retrievalTask------------');
+  await retrieveSubscriptions(0, 20);
 })

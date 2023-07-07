@@ -1,15 +1,10 @@
-
+import { IName } from "./name"
 
 export interface ISubcriber {
     payerId?: string,
     emailAddress: string,
     name: IName,
     shippingAddress?: IShippingAddress
-}
-
-interface IName {
-    givenName: string,
-    surname: string,
 }
 
 interface IShippingAddress {
